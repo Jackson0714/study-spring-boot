@@ -1,4 +1,6 @@
-# 每天3分钟玩转SpringBoot - 05. 数据访问之JDBC
+# 10分钟进阶SpringBoot - 05. 数据访问之JDBC
+
+代码下载：https://github.com/Jackson0714/study-spring-boot.git
 
 ## 一、JDBC是什么？
 
@@ -6,7 +8,7 @@ JDBC API 属于Java APIJDBC用于以下几种功能：连接到数据库、执�
 
 ## 二、Spring Boot中如何使用JDBC
 
-### 1.创建 Spring Boot Project 时引入 JDBC API 依赖和 MySQL Driver依赖
+### 2.1 创建 Spring Boot Project 时引入 JDBC API 依赖和 MySQL Driver依赖
 
 ![img](.\images\spring-boot-05-data-jdbc\1.png)
 可以在POM中找到引入的JDBC依赖和mysql依赖：
@@ -29,7 +31,7 @@ MySql 驱动依赖：
 </dependency>
 ```
 
-### 2.配置数据库连接
+### 2.2 配置数据库连接
 
 新增配置文件：src/main/resources/application.yml
 
@@ -44,7 +46,7 @@ spring:
 
 注意：`com.mysq.jdbc.Driver` 被废弃了，需要使用`com.mysql.cj.jdbc.Driver`
 
-### 3.查看使用的数据源和数据库连接
+### 2.3 查看使用的数据源和数据库连接
 
 ``` java
 package com.jackson0714.springboot;
@@ -104,19 +106,21 @@ DataSourceConfiguration用来自动导入数据源（根据各种判断）
 		@ConfigurationProperties(prefix = "spring.datasource.tomcat")
 ```
 
-1）如果导入了org.apache.tomcat.jdbc.pool.DataSource数据源，并且配置的spring.datasource.type配置的是org.apache.tomcat.jdbc.pool.DataSource，如果没配置type则使用tomcat数据源
+### 3.1 自动选择数据源
 
-2）HikariDataSource数据源也类似这样判断。
+如果导入了org.apache.tomcat.jdbc.pool.DataSource数据源，并且配置的spring.datasource.type配置的是org.apache.tomcat.jdbc.pool.DataSource，如果没配置type则使用tomcat数据源
 
-3）默认使用tomcat数据源
+### 3.2 HikariDataSource数据源也类似这样判断。
 
-4）默认支持以下数据源
+### 3.3 默认使用tomcat数据源
+
+### 3.4 默认支持以下数据源
 
 ``` java
 org.apache.tomcat.jdbc.pool、HikariDataSource、org.apache.commons.dbcp2
 ```
 
-5）支持自定义数据源
+### 3.5 支持自定义数据源
 
 使用DataSourceBuilder创建数据源，利用反射创建响应type的数据源，并且绑定相关属性
 
@@ -138,7 +142,7 @@ org.apache.tomcat.jdbc.pool、HikariDataSource、org.apache.commons.dbcp2
 	}
 ```
 
-6）DataSourceInitializerInvoker 运行脚本
+### 3.6 DataSourceInitializerInvoker 运行脚本
 
 ```java
 /**
@@ -172,9 +176,9 @@ private List<Resource> getScripts(String propertyName, List<String> resources, S
 }
 ```
 
-1.`fallback` = "schema", `platform`="all",会自动执行根目录下：schema-all.sql 或schema.sql 文件
+1) `fallback` = "schema", `platform`="all",会自动执行根目录下：schema-all.sql 或schema.sql 文件
 
-2.fallback = "data", `platform`="all",会自动执行根目录下：data-all.sql 或data.sql 文件
+2) `fallback` = "data", `platform`="all",会自动执行根目录下：data-all.sql 或data.sql 文件
 
 isEnabled() 方法判断是否开启了自动执行脚本
 
@@ -197,7 +201,7 @@ private boolean isEnabled() {
 }
 ```
 
-7）通过配置文件指定需要执行脚本
+### 3.7 通过配置文件指定需要执行脚本
 
 ```yaml
 schema:
@@ -208,11 +212,183 @@ schema:
 
 ![img](.\images\spring-boot-05-data-jdbc\7.png)
 
+## 四、JdbcTemplate
+
+JdbcTemplateAutoConfiguration.java 文件 自动注入了JdbcTemplate。（JdbcTemplate用来操作数据库）
+
+``` java
+@Configuration(proxyBeanMethods = false)
+@ConditionalOnClass({ DataSource.class, JdbcTemplate.class })
+@ConditionalOnSingleCandidate(DataSource.class)
+@AutoConfigureAfter(DataSourceAutoConfiguration.class)
+@EnableConfigurationProperties(JdbcProperties.class)
+@Import({ JdbcTemplateConfiguration.class, NamedParameterJdbcTemplateConfiguration.class })
+public class JdbcTemplateAutoConfiguration {
+
+}
+```
+
+我们用Swagger的方式来测试
+
+## 五、配置Swagger用来测试
+
+### 5.1 pom.xml文件 添加swagger依赖
+
+``` xml
+<!-- swagger -->
+<dependency>
+  <groupId>io.springfox</groupId>
+  <artifactId>springfox-swagger2</artifactId>
+  <version>2.9.2</version>
+</dependency>
+<dependency>
+  <groupId>io.springfox</groupId>
+  <artifactId>springfox-swagger-ui</artifactId>
+  <version>2.9.2</version>
+</dependency>
+```
+
+### 5.2 添加SwaggerConfig.java文件
+
+``` java
+package com.jackson0714.springboot.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {
+
+    @Bean
+    public Docket createRestApi(){
+        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any()).build();
+    }
+
+    private ApiInfo apiInfo(){
+        return new ApiInfoBuilder()
+                .title("玩转Spring Boot 接口文档")
+                .description("This is a restful api document of Spring Boot.")
+                .version("1.0")
+                .build();
+    }
+
+}
+```
+
+### 5.3 访问Swagger文档
+
+http://localhost:8081/swagger-ui.html
+
+![img](.\images\spring-boot-05-data-jdbc\swagger.png)
+
+## 六、测试
+
+### 6.1 新增部门
+
+``` java
+@ApiOperation(value = "1.新增部门")
+@ApiImplicitParams({
+  @ApiImplicitParam(name = "name", value = "部门名称")
+})
+@PostMapping("/create")
+public int createDepartment(@RequestParam String name) {
+  String sql = String.format("insert into department(departmentName) value('%s')", name);
+  int result = jdbcTemplate.update(sql);
+  return result;
+}
+```
+
+![img](.\images\spring-boot-05-data-jdbc\create_swagger.png)
+
+表记录
+
+![img](.\images\spring-boot-05-data-jdbc\create_table.png)
+
+### 6.2 查询所有部门
+
+``` java
+@ApiOperation(value = "2.查询所有部门")
+@GetMapping("/getAllDepartment")
+public List<Map<String, Object>> getAllDepartment() {
+  List<Map<String, Object>> list = jdbcTemplate.queryForList("select * from department");
+  return list;
+}
+```
+
+![img](.\images\spring-boot-05-data-jdbc\query_all_swagger.png)
+
+### 6.3 根据id查询某个部门
+
+``` java
+@ApiOperation(value = "3.根据id查询某个部门")
+@ApiImplicitParams({
+  @ApiImplicitParam(name = "id", value = "需要查询的部门id")
+})
+@GetMapping("/{id}")
+public Map<String, Object> getDepartmentById(@PathVariable Long id) {
+  String sql = "select * from department where id = " + id;
+  List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
+  return list.get(0);
+}
+```
+
+![img](.\images\spring-boot-05-data-jdbc\query_id_swagger.png)
+
+### 6.4 根据id更新部门名称
+
+``` java
+@ApiOperation(value = "根据id更新部门名称")
+@ApiImplicitParams({
+  @ApiImplicitParam(name = "id", value = "需要更新的部门id"),
+  @ApiImplicitParam(name = "name", value = "需要更新的部门名称")
+})
+@PostMapping("/update")
+public int updateDepartmentById(@RequestParam Long id, @RequestParam String name) {
+  String sql = String.format("update department set departmentName = '%s' where id = %d", name, id);
+  int result = jdbcTemplate.update(sql);
+  return result;
+}
+```
+
+![img](.\images\spring-boot-05-data-jdbc\update_swagger.png)
+
+### 6.5 根据id删除部门
+
+``` java
+@ApiOperation(value = "根据id删除部门")
+@ApiImplicitParams({
+  @ApiImplicitParam(name = "id", value = "需要删除的部门id")
+})
+@PostMapping("/delete")
+public int deleteDepartment(@RequestParam Long id) {
+  String sql = String.format("delete from department where id = %d", id);
+  int result = jdbcTemplate.update(sql);
+  return result;
+}
+```
+
+![img](.\images\spring-boot-05-data-jdbc\delete_swagger.png)
+
+
+
 
 
 # 报错：
 
-### 1.java.sql.SQLException:null, message from server: "Host 'Siri' is not allowed to connect to this MySQL server"
+### 问题1
+
+java.sql.SQLException:null, message from server: "Host 'Siri' is not allowed to connect to this MySQL server"
 
 ![img](.\images\spring-boot-05-data-jdbc\2.png)
 
@@ -236,7 +412,9 @@ Query OK, 1 row affected
 
 ![img](.\images\spring-boot-05-data-jdbc\4.png)
 
-### 2.Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the 'serverTimezone' configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+### 问题2
+
+Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the 'serverTimezone' configuration property) to use a more specifc time zone value if you want to utilize time zone support.
 
 ![img](.\images\spring-boot-05-data-jdbc\3.png)
 
