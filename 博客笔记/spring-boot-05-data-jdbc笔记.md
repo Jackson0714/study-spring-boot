@@ -1,4 +1,4 @@
-# 10分钟进阶SpringBoot - 05. 数据访问之JDBC
+# 05.深入浅出 Spring Boot - 数据访问之JDBC
 
 代码下载：https://github.com/Jackson0714/study-spring-boot.git
 
