@@ -12,16 +12,16 @@ import java.sql.SQLException;
 @SpringBootTest
 class Springboot05DataJdbcApplicationTests {
 
-	@Autowired
-	DataSource dataSource;
+    @Autowired
+    DataSource dataSource;
 
-	@Test
-	void contextLoads() throws SQLException {
-		System.out.println("数据源：" + dataSource.getClass());
+    @Test
+    void contextLoads() throws SQLException {
+        System.out.println("数据源：" + dataSource.getClass());
 
-		Connection connection = dataSource.getConnection();
-		System.out.println("数据库连接：" + connection);
-		connection.close();
-	}
+        Connection connection = dataSource.getConnection();
+        System.out.println("数据库连接：" + connection);
+        connection.close();
+    }
 
 }

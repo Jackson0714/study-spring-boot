@@ -15,17 +15,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
 
-
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-       // super.addViewControllers(registry);
+        // super.addViewControllers(registry);
 
         registry.addViewController("/success").setViewName("successPage");
     }
 
     //所有的WebMvcConfigurerAdapter组件都会一起起作用
     @Bean //将组件注册在容器
-    public WebMvcConfigurerAdapter webMvcConfigurerAdapter(){
+    public WebMvcConfigurerAdapter webMvcConfigurerAdapter() {
         WebMvcConfigurerAdapter adapter = new WebMvcConfigurerAdapter() {
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
@@ -41,14 +40,14 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
                 //静态资源；  *.css , *.js
                 //SpringBoot已经做好了静态资源映射
                 registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                        .excludePathPatterns("/index.html","/","/user/login");
+                        .excludePathPatterns("/index.html", "/", "/user/login");
             }
         };
         return adapter;
     }
 
     @Bean
-    public LocaleResolver localeResolver(){
+    public LocaleResolver localeResolver() {
 
         return new MyLocaleResolver();
     }

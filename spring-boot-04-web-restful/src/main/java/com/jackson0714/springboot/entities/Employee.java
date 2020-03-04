@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Employee {
 
-	private Integer id;
+    private Integer id;
     private String lastName;
 
     private String email;
@@ -60,6 +60,7 @@ public class Employee {
     public void setBirth(Date birth) {
         this.birth = birth;
     }
+
     public Employee(Integer id, String lastName, String email, Integer gender,
                     Department department) {
         super();
@@ -85,6 +86,6 @@ public class Employee {
                 ", birth=" + birth +
                 '}';
     }
-	
-	
+
+
 }

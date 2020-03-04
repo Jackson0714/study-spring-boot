@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f4e8e664-8b33-4d5c-9f06-c923bd908a06" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/SpringBoot04WebRestfulApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/SpringBoot04WebRestfulApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/component/LoginHandlerInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/component/LoginHandlerInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/component/MyErrorAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/component/MyErrorAttributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/component/MyLocaleResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/component/MyLocaleResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/config/MyMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/config/MyMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/controller/MyExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/controller/MyExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/dao/DepartmentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/dao/DepartmentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/dao/EmployeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/dao/EmployeeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/entities/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/entities/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/java/com/jackson0714/springboot/entities/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/static/asserts/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/static/asserts/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/static/asserts/css/signin.css" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/static/asserts/css/signin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/static/asserts/img/bootstrap-solid.svg" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/static/asserts/img/bootstrap-solid.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/commons/bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/commons/bar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/emp/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/emp/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/emp/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/emp/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/error/4xx.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/error/4xx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/error/5xx.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/error/5xx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/successPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/main/resources/templates/successPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-04-web-restful/src/test/java/com/jackson0714/springboot/SpringBoot04WebRestfulApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-04-web-restful/src/test/java/com/jackson0714/springboot/SpringBoot04WebRestfulApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-05-data-jdbc/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-05-data-jdbc/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-05-data-jdbc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-05-data-jdbc/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-05-data-jdbc/src/main/java/com/jackson0714/springboot/Springboot05DataJdbcApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-05-data-jdbc/src/main/java/com/jackson0714/springboot/Springboot05DataJdbcApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-05-data-jdbc/src/main/java/com/jackson0714/springboot/config/DruidConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-05-data-jdbc/src/main/java/com/jackson0714/springboot/config/DruidConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-05-data-jdbc/src/main/java/com/jackson0714/springboot/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-05-data-jdbc/src/main/java/com/jackson0714/springboot/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-05-data-jdbc/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-05-data-jdbc/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-05-data-jdbc/src/test/java/com/jackson0714/springboot/Springboot05DataJdbcApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-05-data-jdbc/src/test/java/com/jackson0714/springboot/Springboot05DataJdbcApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-06-data-druid/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-06-data-druid/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-06-data-druid/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-06-data-druid/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-06-data-druid/src/main/java/com/jackson0714/springboot/Springboot05DataJdbcApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-06-data-druid/src/main/java/com/jackson0714/springboot/Springboot05DataJdbcApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-06-data-druid/src/main/java/com/jackson0714/springboot/config/DruidConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-06-data-druid/src/main/java/com/jackson0714/springboot/config/DruidConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-06-data-druid/src/main/java/com/jackson0714/springboot/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-06-data-druid/src/main/java/com/jackson0714/springboot/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-06-data-druid/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-06-data-druid/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-06-data-druid/src/test/java/com/jackson0714/springboot/Springboot05DataJdbcApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-06-data-druid/src/test/java/com/jackson0714/springboot/Springboot05DataJdbcApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Ye78hnzvPTbdWjRZhgInLWrfNm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-boot-07-data-mybatis" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f4e8e664-8b33-4d5c-9f06-c923bd908a06" name="Default Changelist" comment="" />
+      <created>1583291048360</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583291048360</updated>
+      <workItem from="1583291237588" duration="73000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1583291306823">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583291306823" />
+  </component>
+</project>

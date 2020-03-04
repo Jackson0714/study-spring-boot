@@ -32,7 +32,7 @@ public class DruidConfig {
         servletInitParams.put("loginUsername", "Admin");
         servletInitParams.put("loginPassword", "abc123");
         //servletInitParams.put("allow",""); // 默认允许所有
-        servletInitParams.put("deny","192.168.10.160"); // 拒绝访问
+        servletInitParams.put("deny", "192.168.10.160"); // 拒绝访问
         servletRegistrationBean.setInitParameters(servletInitParams);
 
         return servletRegistrationBean;

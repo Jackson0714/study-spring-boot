@@ -28,5 +28,5 @@ spring:
 
 
       #initialization-mode: always
-    #schema:
-     # - classpath:department.sql
+      #schema:
+    # - classpath:department.sql
